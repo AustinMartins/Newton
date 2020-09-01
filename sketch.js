@@ -23,11 +23,11 @@ function setup() {
 
 	//Create the Bodies Here.
 
-	bobobject1 = new bob(340,600,170);
-	bobobject2 = new bob(420,600,170);
-	bobobject3 = new bob(400,600,170);
-	bobobject4 = new bob(480,600,170);
-	bobobject5 = new bob(560,600,170);
+	bobobject1 = new bob(500,600,170);
+	bobobject2 = new bob(400,600,170);
+	bobobject3 = new bob(300,600,170);
+	bobobject4 = new bob(200,600,170);
+	bobobject5 = new bob(100,600,170);
 
 	roof1 = new roof(400,100,600,40);
 
@@ -60,14 +60,16 @@ function draw() {
   rope4.display();
   rope5.display();
 
-
-
-
-
-
   drawSprites();
  
 }
 
+function mouseDragged(){
+    Matter.Body.setPosition(bobobject1.body, {x: mouseX , y: mouseY});
+}
 
+
+function mouseReleased(){
+    bobobject5.fly();
+}
 
